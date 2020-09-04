@@ -6,11 +6,6 @@
     <!-- 不加载无用Jar包 -->
     <absolute-ordering/>
 
-    <!-- 欢迎页,也就是启动项目默认系统访问的页面 -->
-    <welcome-file-list>
-        <welcome-file>mgr_login.jsp</welcome-file>
-    </welcome-file-list>
-
     <!--核心过滤器-->
     <filter>
         <filter-name>struts2</filter-name>
@@ -21,14 +16,24 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <!--Spring核心监听器-->
+    <!--Spring的核心监听器-->
     <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
     </listener>
 
-    <!--加载Spring的配置文件的路径，默认加载的/WEB-INF/applicationContext.xml-->
+    <!--
+     加载Spring的配置文件的路径的
+     默认加载的/WEB-INF/applicationContext.xml
+     -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
+
+    <!-- 欢迎页,也就是启动项目默认系统访问的页面 -->
+    <welcome-file-list>
+        <welcome-file>mgr_login.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

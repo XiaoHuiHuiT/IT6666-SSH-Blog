@@ -13,18 +13,17 @@
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx.xsd
 ">
-    <!-- 配置hibernate -->
-    <!-- 引入属性文件 -->
+    <!--配置hibernate-->
+    <!--引入属性文件-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <!--连接池-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="${jdbc.driverclass}"/>
-        <!-- 属性文件当中的名称不能和name名称一样 -->
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
+        <property name="driverClassName" value="${jdbc.driverclass}" />
+        <!--属性文件当中的名称不能和name名称一样-->
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
     </bean>
-
     <!-- Spring整合Hibernate -->
     <!-- 引入Hibernate的配置的信息===== spring-orm.jar========== -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -42,18 +41,16 @@
         <!-- 设置映射文件 -->
         <property name="mappingResources">
             <list>
-
             </list>
         </property>
     </bean>
 
-    <!-- 配置事务管理器 -->
+    <!--配置事务管理器-->
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-
-    <!-- 开启注解,增强-->
+    <!--开启注解  增强-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>
