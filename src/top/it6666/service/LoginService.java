@@ -1,0 +1,1 @@
+package top.it6666.service;/** * @author BNTang * @version 1.0 * @program it6666-Blog * @date Created in 2020/11/9 10:49 * @description */public interface LoginService {}

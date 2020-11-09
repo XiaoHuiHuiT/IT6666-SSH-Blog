@@ -16,4 +16,10 @@
     <!--导入hibernate相关配置-->
     <import resource="hibernateApplication.xml"/>
 
+    <bean id="loginAction" class="top.it6666.web.LoginAction" scope="prototype">
+        <property name="login"
+    </bean>
+
+
+
 </beans>
